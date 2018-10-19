@@ -6,7 +6,7 @@
 		 .get(controller.list)
 		 .post(controller.create);
 
-	  app.route('/filmes/:id')
+	  app.route('/api/filmes/:id')
 		 .get(controller.read)
 		 .put(controller.update)
 		 .delete(controller.delete);

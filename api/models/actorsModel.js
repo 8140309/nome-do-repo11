@@ -5,7 +5,7 @@
  var actorsSchema = new Schema({
 	 name: {
 		 type: String,
-		 required: 'Kindly enter the name of the task'
+		 required: 'Please enter the name'
 	 },
 	 Created_date: {
 		 type: Date,
@@ -18,6 +18,6 @@
 		}],
 		 default:  ['pending']
 	}
-});
+}, { strict: false });
 
  module.exports = mongoose.model('actors', actorsSchema); 

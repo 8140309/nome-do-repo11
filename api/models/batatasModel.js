@@ -2,7 +2,7 @@
  var mongoose = require('mongoose');
  var Schema = mongoose.Schema; 
 
- var tasksSchema = new Schema({
+ var batatasSchema = new Schema({
 	 name: {
 		 type: String,
 		 required: 'Please enter the name'
@@ -20,4 +20,4 @@
 	}
 }, { strict: false });
 
- module.exports = mongoose.model('tasks', tasksSchema); 
+ module.exports = mongoose.model('batatas', batatasSchema); 

@@ -6,7 +6,7 @@
 		 .get(controller.list)
 		 .post(controller.create);
 
-	  app.route('/tasks/:id')
+	  app.route('/api/tasks/:id')
 		 .get(controller.read)
 		 .put(controller.update)
 		 .delete(controller.delete);

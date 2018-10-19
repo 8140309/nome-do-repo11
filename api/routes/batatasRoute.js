@@ -1,12 +1,12 @@
 'use strict';
  module.exports = function(app) {
-	 var controller = require('../controllers/actorsController');
+	 var controller = require('../controllers/batatasController');
 
-	 app.route('/actors')
+	 app.route('/batatas')
 		 .get(controller.list)
 		 .post(controller.create);
 
-	  app.route('/api/actors/:id')
+	  app.route('/api/batatas/:id')
 		 .get(controller.read)
 		 .put(controller.update)
 		 .delete(controller.delete);

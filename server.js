@@ -1,4 +1,5 @@
-var express = require('express'),
+var config = require('./config.js');
+ var express = require('express'),
 	 app = express(),
 	 port = process.env.PORT || 3000,
 	 mongoose = require('mongoose'),
@@ -7,6 +8,10 @@ var express = require('express'),
  app.use(bodyParser.urlencoded({ extended: true }));
  app.use(bodyParser.json());
 
+
+ var batatasModel = require('./api/models/batatasModel');
+ var batatasRoute = require('./api/routes/batatasRoute');
+ batatasRoute(app);
  var tasksModel = require('./api/models/tasksModel');
  var tasksRoute = require('./api/routes/tasksRoute');
  tasksRoute(app);
