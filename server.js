@@ -17,7 +17,8 @@ var config = require('./config.js'); //
 			 res.json({
 				 message: 'Authenticated! Use this token in the Authorization header',
 				 token: token
-			 });n		 });
+			 });
+		 });
 	 } else {
 		 res.status(401).send('Wrong username and/or password');
 	 }
