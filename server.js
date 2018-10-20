@@ -61,7 +61,7 @@ var config = require('./config.js');
  actorsRoute(app);
 
  mongoose.Promise = global.Promise;
- const connection = mongoose.connect('mongodb+srv://fernando:123456Aa@cluster0-sejql.gcp.mongodb.net/movies?retryWrites=true', { useNewUrlParser: true });
+ const connection = mongoose.connect('mongodb+srv://fernando:654321aA@cluster0-sejql.gcp.mongodb.net/movies?retryWrites=true', { useNewUrlParser: true });
 
  app.listen(port);
  console.log('RESTful API server started on: ' + port);
