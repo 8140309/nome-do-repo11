@@ -1,4 +1,4 @@
-var config = require('./config.js'); //
+var config = require('./config.js');
  var express = require('express'),
 	 app = express(),
 	 port = process.env.PORT || 3000,
