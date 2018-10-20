@@ -7,12 +7,13 @@ var config = require('./config.js'); //
 
  app.use(bodyParser.urlencoded({ extended: true }));
  app.use(bodyParser.json());
-var jwt = require('jsonwebtoken');
+
+ var jwt = require('jsonwebtoken');
 
  app.post('/login', (req, res) => {
 	 const user = { username, password } = req.body;
-	 if (username === 'admin' && password === '123456') {
-		 jwt.sign({ user }, 'secret_key_goes_here', { expiresIn: '1h' }, (err, token) => {
+	 if (username === config.adminUsername && password === config.adminPassword) {
+		 jwt.sign({ user }, config.tokenSecretKey, { expiresIn: config.tokenExireTime }, (err, token) => {
 			 res.json({
 				 message: 'Authenticated! Use this token in the Authorization header',
 				 token: token
@@ -23,7 +24,7 @@ var jwt = require('jsonwebtoken');
 });
 
  app.all('/api/*', ensureToken, (req, res, next) => {
-	 jwt.verify(req.token, 'secret_key_goes_here', function (err, data) {
+	 jwt.verify(req.token, config.tokenSecretKey, function (err, data) {
 		 if (err) {
 			 res.sendStatus(403);
 		 } else {
